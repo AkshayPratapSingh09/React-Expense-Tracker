@@ -13,11 +13,16 @@ const ExpenseItem = (props) => {
     });
   };
 
+  const Update = () =>{
+	console.log('Working')
+  }
+console.log(props,'props')
   return (
     <li class="list-group-item d-flex justify-content-between">
-      {props.name}
+      <button onClick={Update}>{props.name}</button>
       <div>
         <Badge bg="primary">₹{props.cost}</Badge>
+        <Badge bg="primary">{props.category}</Badge>
         <TiDelete size="1.5em" onClick={handleDeleteExpense} />
       </div>
     </li>

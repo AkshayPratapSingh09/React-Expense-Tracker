@@ -18,6 +18,7 @@ const ExpenseList = () => {
 		setfilteredExpenses(searchResults);
 	};
 
+	console.log(filteredExpenses,'4444')
 	return (
 		<>
 			<input
@@ -27,11 +28,13 @@ const ExpenseList = () => {
 				onChange={handleChange}
 			/>
 			<ul class='list-group mt-3 mb-3'>
+			
 				{filteredExpenses.map((expense) => (
 					<ExpenseItem
 						id={expense.id}
 						name={expense.name}
 						cost={expense.cost}
+						category={expense.category}
 					/>
 				))}
 			</ul>
