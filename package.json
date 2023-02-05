@@ -1,7 +1,7 @@
 {
   "name": "react-expense-tracker",
   "version": "0.1.0",
-  "homepage": "https://GeekAp09.github.io/GeekAp09.github.io",
+  "homepage": "https://GeekAp09.github.io/React-Expense-Tracker",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
