@@ -4,38 +4,52 @@ import { v4 as uuidv4 } from 'uuid';
 // 5. The reduceer - this is used to update the state, based on the action
 export const AppReducer = (state, action) => {
 	switch (action.type) {
-		case 'ADD_EXPENSE':
-			return {
-				...state,
-				expenses: [...state.expenses, action.payload],
-			};
-		case 'DELETE_EXPENSE':
-			return {
-				...state,
-				expenses: state.expenses.filter(
-					(expense) => expense.id !== action.payload
-				),
-			};
-		case 'SET_BUDGET':
-			return {
-				...state,
-				budget: action.payload,
-			};
+    case "ADD_EXPENSE":
+      return {
+        ...state,
+        expenses: [...state.expenses, action.payload],
+      };
+    case "DELETE_EXPENSE":
+      return {
+        ...state,
+        expenses: state.expenses.filter(
+          (expense) => expense.id !== action.payload
+        ),
+      };
+    case "UPDATE_EXPENSE":
+      return {
+        ...state,
+        expenses: state.expenses.map((value) => {
+          if (value.id === action.payload.id) {
+            return {
+              ...value,
+              name: action.payload.name,
+            };
+          } else {
+            return value;
+          }
+        }),
+      };
+    case "SET_BUDGET":
+      return {
+        ...state,
+        budget: action.payload,
+      };
 
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 };
 
 // 1. Sets the initial state when the app loads
 const initialState = {
 	budget: 2000,
 	expenses: [
-		{ id: uuidv4(), name: 'Shopping', catergory:'', cost: 50 },
-		{ id: uuidv4(), name: 'Holiday',catergory:'', cost: 300 },
-		{ id: uuidv4(), name: 'Transportation',catergory:'', cost: 70 },
-		{ id: uuidv4(), name: 'Fuel',catergory:'', cost: 40 },
-		{ id: uuidv4(), name: 'Child Care',catergory:'', cost: 500 },
+		{ id: uuidv4(), name: 'Shopping', category:'Shopping', cost: 50 },
+		{ id: uuidv4(), name: 'Holiday',category:'Travel', cost: 300 },
+		{ id: uuidv4(), name: 'Transportation',category:'Travel', cost: 70 },
+		{ id: uuidv4(), name: 'Fuel',category:'Gas', cost: 40 },
+		{ id: uuidv4(), name: 'Child Care',category:'Personal', cost: 500 },
 	],
 };
 

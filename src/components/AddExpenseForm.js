@@ -34,6 +34,7 @@ console.log(category)
         <div class="col-sm col-lg-4">
           <label for="name">Name</label>
           <input
+          placeholder="Enter Expense Name"
             required="required"
             type="text"
             class="form-control"
@@ -45,6 +46,7 @@ console.log(category)
         <div class="col-sm col-lg-4">
           <label for="cost">Cost</label>
           <input
+          placeholder="Eg. 20, 30, 1000"
             required="required"
             type="number"
             class="form-control"
@@ -58,9 +60,15 @@ console.log(category)
       <div class="mt-3 col-sm col-lg-4">
         <select class="form-select" aria-label="Default select example" required='required' id='category' value={category} onChange={(event) => setCategory(event.target.value)}>
           <option selected>Please Select the category</option>
-          <option value="One">One</option>
-          <option value="Two">Two</option>
-          <option value="Three">Three</option>
+          <option value="Food">Food</option>
+          <option value="Housing">Housing</option>
+          <option value="Transporation">Transporation</option>
+          <option value="Health">Health</option>
+          <option value="Credit Bill">Credit</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Eletrcity">Eletrcity</option>
+          <option value="Gas">Gas</option>
+          <option value="Misc">Others</option>
         </select>
       </div>
 
