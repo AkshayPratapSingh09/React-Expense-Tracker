@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 const EditBudget = (props) => {
 	const [value, setValue] = useState(props.budget);
 	return (
@@ -22,5 +21,4 @@ const EditBudget = (props) => {
 		</>
 	);
 };
-
 export default EditBudget;
