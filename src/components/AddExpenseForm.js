@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import { v4 as uuidv4 } from "uuid";
 
+//Used Context for getting the form data
 const AddExpenseForm = (props) => {
   const { dispatch } = useContext(AppContext);
 
@@ -28,6 +29,7 @@ const AddExpenseForm = (props) => {
     setCost("");
   };
 console.log(category)
+	//Real Component is here
   return (
     <form onSubmit={onSubmit}>
       <div class="row">
